@@ -1,0 +1,12 @@
+.login{
+    margin: 10% 25%;
+    text-align: center;
+    border: 5px solid white;
+    border-radius: 5px;
+    width: 50%;
+    background-color: #422a67;
+}
+
+.login_elements{
+    padding: 1em;
+}

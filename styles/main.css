@@ -1,0 +1,30 @@
+body{
+    background-color: #1B1F22;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.image{
+    display: flex;
+    flex: 0.5;
+    width: 15vw;
+    padding-left: 40em;
+}
+
+.nav_points{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.nav_points span{
+    padding-left: 13em;
+    text-decoration: underline;
+}
+
+.nav_points span:hover{
+    color: #5d5b5b;
+    cursor: pointer;
+    transition: 1s color ease;
+}
