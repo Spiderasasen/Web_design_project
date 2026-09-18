@@ -18,12 +18,13 @@ body{
     padding-top: 2em;
 }
 
-.nav_points span{
+.nav_points span a{
     padding-left: 13em;
     text-decoration: underline;
+    color: white;
 }
 
-.nav_points span:hover{
+.nav_points span:hover a{
     color: #5d5b5b;
     cursor: pointer;
     transition: 1s color ease;
