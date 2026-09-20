@@ -1,0 +1,14 @@
+.repos {
+    display: block;
+    width: 100%;
+    margin: 10px;
+}
+
+.repos_card{
+    color: black;
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
