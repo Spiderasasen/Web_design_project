@@ -29,3 +29,9 @@ body{
     cursor: pointer;
     transition: 1s color ease;
 }
+
+@media (max-width: 1000px) {
+    .image{
+        display: none;
+    }
+}
