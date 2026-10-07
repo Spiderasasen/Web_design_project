@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles/home_page.css" type="text/css">
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Overview · Codefolio</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/home_page.css">
+<script src="scripts/app.js" defer>
+</script>
 </head>
-<body>
-<!--for navigation-->
-    <header>
-        <img class="image" src="assets/github-6980894_640.png" alt="GitHub Logo">
-        <div class="nav_points">
-            <nav>
-                <span><a href="#">Home</a></span>
-                <span><a href="heatmap.html">Your Heat Map</a></span>
-                <span><a href="repositories.html">Your top repositories</a></span>
-                <span><a href="languages.html">Your top languages</a></span>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="login">
-            <h1>Welcome to your GitHub actions</h1>
-            <div class="login_elements">
-                <div class="username">
-                    <p>Please enter your username</p>
-                    <input class="login_elements_input" type="text" placeholder="Username">
-                </div>
-                <div class="password">
-                    <p>Please enter your password</p>
-                    <input class="login_elements_input" type="password" placeholder="Password">
-                </div>
-                <button class="login_elements_button">Login</button>
-            </div>
-        </div>
-    </main>
+<body class="home"><a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
+</header>
+<div class="nav-wrap">
+<nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="heatmap.html">Activity</a><a href="repositories.html">Repositories</a><a href="languages.html">Languages</a>
+</nav>
+</div>
+<main id="main">
+<div class="home-layout">
+<aside class="profile">
+<div class="profile-avatar" aria-hidden="true">Y<span>⌘</span>
+</div>
+<h1>Your next chapter.</h1>
+<p class="handle">@your-username</p>
+<p class="profile-bio">A little curiosity. A lot of commits.<br>Your coding journey, all in one place.</p><a class="button secondary full" href="#explore">Explore your workspace</a>
+<div class="profile-meta"><span>◉ Open to learning</span><span>⌁ Building something good</span>
+</div>
+<div class="profile-rule">
+</div>
+<h2 class="small-heading">The toolkit</h2>
+<div class="chips"><span>Python</span><span>JavaScript</span><span>HTML &amp; CSS</span>
+</div>
+</aside>
+<section class="overview">
+<div class="intro-label"><span class="status-dot"></span> YOUR PERSONAL DEVELOPER SPACE</div>
+<h2 class="hero-title">Every commit<br>tells a story<span>.</span>
+</h2>
+<p class="hero-description">See what you’re building, discover your strongest languages, and turn everyday progress into the bigger picture.</p>
+<div class="hero-actions"><a class="button primary" href="heatmap.html">Explore activity <span aria-hidden="true">↗</span></a><a class="text-link" href="repositories.html">Browse repositories →</a>
+</div>
+<div class="readme panel">
+<div class="panel-header"><span>⌘ &nbsp; your-username / README.md</span><span class="muted">Preview</span>
+</div>
+<div class="readme-body">
+<h3>Hey there, builder. <span aria-hidden="true">✦</span>
+</h3>
+<p>This is your space to connect the dots between the projects you create and the skills you grow.</p>
+<div class="readme-stats">
+<div><strong>24</strong><span>repositories</span>
+</div>
+<div><strong>6</strong><span>languages</span>
+</div>
+<div><strong>128</strong><span>active days</span>
+</div>
+</div>
+</div>
+</div>
+<div class="section-title" id="explore">
+<h3>Your workspace</h3><span class="muted">A closer look at your code</span>
+</div>
+<div class="workspace-grid"><a class="workspace-card panel" href="heatmap.html"><span class="tile-icon green">▦</span>
+<h3>Activity</h3>
+<p>Small steps. Consistent progress. See your year in commits.</p><span class="card-link">View heatmap ↗</span></a><a class="workspace-card panel" href="repositories.html"><span class="tile-icon blue">⌘</span>
+<h3>Repositories</h3>
+<p>The ideas you’ve turned into something real.</p><span class="card-link">Explore projects ↗</span></a><a class="workspace-card panel" href="languages.html"><span class="tile-icon purple">{ }</span>
+<h3>Languages</h3>
+<p>Discover the tools behind your best work.</p><span class="card-link">See your toolkit ↗</span></a>
+</div>
+</section>
+</div>
+</main>
+<footer><span>codefolio <span class="muted">· Built one commit at a time.</span></span><span>Sample data · A preview of your developer journey</span>
+</footer>
 </body>
 </html>

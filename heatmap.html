@@ -1,33 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>heatmap</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
-    <link rel="stylesheet" href="styles/heatmap.css" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Activity · Codefolio</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/heatmap.css">
+<script src="scripts/app.js" defer>
+</script>
 </head>
-<body>
-<!--for navigation-->
-    <header>
-        <img class="image" src="assets/github-6980894_640.png" alt="GitHub Logo">
-        <div class="nav_points">
-            <nav>
-                <span><a href="index.html">Home</a></span>
-                <span><a href="#">Your Heat Map</a></span>
-                <span><a href="repositories.html">Your top repositories</a></span>
-                <span><a href="languages.html">Your top languages</a></span>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="heatmap">
-            <h1>Heatmap</h1>
-            <h3>Below is your GitHub heatmap</h3>
-            <div id="heatmap">
-
-            </div>
-        </div>
-    </main>
+<body class="dashboard"><a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
+</header>
+<div class="nav-wrap">
+<nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="heatmap.html" aria-current="page">Activity</a><a href="repositories.html">Repositories</a><a href="languages.html">Languages</a>
+</nav>
+</div>
+<main id="main">
+<div class="page-heading">
+<div>
+<p class="eyebrow">SHOW UP. BUILD. REPEAT.</p>
+<h1>Your consistency, visualized.</h1>
+<p class="muted">A year of small wins adds up to something remarkable.</p>
+</div><span class="sample-label">Sample profile</span>
+</div>
+<div class="stats-grid">
+<div class="panel stat"><span>Total contributions</span><strong>842</strong><small>Across the sample year</small>
+</div>
+<div class="panel stat"><span>Active days</span><strong>128</strong><small>Every day counts</small>
+</div>
+<div class="panel stat"><span>Longest streak</span><strong>14 days</strong><small>Your personal best</small>
+</div>
+<div class="panel stat"><span>Daily average</span><strong>2.3</strong><small>Steady progress</small>
+</div>
+</div>
+<div class="dashboard-grid">
+<section class="panel activity-panel">
+<div class="panel-header">
+<h2>Contribution activity</h2><span class="pill">2025</span>
+</div>
+<p class="muted chart-description">842 contributions in the sample year</p>
+<div class="heatmap-scroll">
+<div class="months" aria-hidden="true"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+</div>
+<div id="heatmap" role="img" aria-label="Sample contribution heatmap for 2025. 842 contributions across 128 active days.">
+</div>
+</div>
+<div class="heatmap-bottom"><span class="muted">Each square is a day of progress</span>
+<div class="legend">Less <i></i><i></i><i></i><i></i><i></i> More</div>
+</div>
+</section>
+<aside class="panel insight"><span class="tile-icon amber">↗</span>
+<p class="eyebrow">KEEP THE MOMENTUM</p>
+<h2>Consistency beats intensity.</h2>
+<p class="muted">A small improvement today is a head start for tomorrow. Keep building at your own pace.</p><a class="text-link" href="repositories.html">Find your next project →</a>
+</aside>
+</div>
+<section class="panel recent">
+<div class="panel-header">
+<h2>Activity highlights</h2><span class="muted">Sample milestones</span>
+</div>
+<div class="milestone"><span class="milestone-dot"></span>
+<div>
+<h3>A new personal best</h3>
+<p class="muted">14 consecutive days of contributions.</p>
+</div><span class="pill">Streak</span>
+</div>
+<div class="milestone"><span class="milestone-dot blue-bg"></span>
+<div>
+<h3>Ideas into action</h3>
+<p class="muted">24 repositories and counting.</p>
+</div><span class="pill">Projects</span>
+</div>
+</section>
+</main>
+<footer><span>codefolio <span class="muted">· Built one commit at a time.</span></span><span>Sample data · A preview of your developer journey</span>
+</footer>
 </body>
 </html>

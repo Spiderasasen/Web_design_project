@@ -1,41 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Repositories</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
-    <link rel="stylesheet" href="styles/repos.css" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Repositories · Codefolio</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/repos.css">
+<script src="scripts/app.js" defer>
+</script>
 </head>
-<body>
-<!--for navigation-->
-    <header>
-        <img class="image" src="assets/github-6980894_640.png" alt="GitHub Logo">
-        <div class="nav_points">
-            <nav>
-                <span><a href="index.html">Home</a></span>
-                <span><a href="heatmap.html">Your Heat Map</a></span>
-                <span><a href="#">Your top repositories</a></span>
-                <span><a href="languages.html">Your top languages</a></span>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="repos">
-            <h1>Repositories</h1>
-            <div class="repos_card">
-                <h3>Title</h3>
-                <p>Description</p>
-            </div>
-            <div class="repos_card">
-                <h3>Title</h3>
-                <p>Description</p>
-            </div>
-            <div class="repos_card">
-                <h3>Title</h3>
-                <p>Description</p>
-            </div>
-        </div>
-    </main>
+<body class="dashboard"><a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
+</header>
+<div class="nav-wrap">
+<nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="heatmap.html">Activity</a><a href="repositories.html" aria-current="page">Repositories</a><a href="languages.html">Languages</a>
+</nav>
+</div>
+<main id="main">
+<div class="page-heading">
+<div>
+<p class="eyebrow">THE THINGS YOU BUILD</p>
+<h1>Ideas, meet execution.</h1>
+<p class="muted">Explore the projects that make up your developer journey.</p>
+</div><span class="sample-label">Sample profile</span>
+</div>
+<div class="stats-grid">
+<div class="panel stat"><span>Repositories</span><strong>24</strong><small>6 featured below</small>
+</div>
+<div class="panel stat"><span>Stars earned</span><strong>76</strong><small>Across featured projects</small>
+</div>
+<div class="panel stat"><span>Languages</span><strong>6</strong><small>A growing toolkit</small>
+</div>
+<div class="panel stat"><span>Most used</span><strong>Python</strong><small>Your go-to language</small>
+</div>
+</div>
+<section class="panel repository-panel">
+<div class="panel-header">
+<h2>Featured repositories</h2><span class="muted" id="result-count">6 projects</span>
+</div>
+<div class="filters"><label class="search-label"><span aria-hidden="true">⌕</span><input id="repo-search" type="search" placeholder="Find a repository…" aria-label="Search repositories"></label><label class="select-label"><span class="sr-only">Filter by language</span><select id="language-filter"><option value="all">All languages</option><option value="python">Python</option><option value="javascript">JavaScript</option><option value="html">HTML</option><option value="css">CSS</option></select></label>
+</div>
+<div id="repo-list">
+<article class="repo-row" data-language="html" data-search="web_design_project a personal developer dashboard built for the web.">
+<div>
+<h2>Web_design_project <span class="visibility">Public</span>
+</h2>
+<p>A personal developer dashboard built for the web.</p>
+<div class="repo-meta"><span><i class="language-dot orange"></i>HTML</span><span aria-label="12 stars">☆ 12</span><span>4 forks</span><span>Updated Oct 5</span>
+</div>
+</div><span class="repo-rank">#01</span>
+</article>
+<article class="repo-row" data-language="python" data-search="robotics_with_python experiments in movement, sensors, and automation.">
+<div>
+<h2>Robotics_with_python <span class="visibility">Public</span>
+</h2>
+<p>Experiments in movement, sensors, and automation.</p>
+<div class="repo-meta"><span><i class="language-dot blue"></i>Python</span><span aria-label="28 stars">☆ 28</span><span>7 forks</span><span>Updated Sep 28</span>
+</div>
+</div><span class="repo-rank">#02</span>
+</article>
+<article class="repo-row" data-language="python" data-search="testing_library small utilities for more reliable python projects.">
+<div>
+<h2>Testing_library <span class="visibility">Public</span>
+</h2>
+<p>Small utilities for more reliable Python projects.</p>
+<div class="repo-meta"><span><i class="language-dot blue"></i>Python</span><span aria-label="8 stars">☆ 8</span><span>2 forks</span><span>Updated Sep 22</span>
+</div>
+</div><span class="repo-rank">#03</span>
+</article>
+<article class="repo-row" data-language="javascript" data-search="algorithm_notes learning data structures, one problem at a time.">
+<div>
+<h2>Algorithm_notes <span class="visibility">Public</span>
+</h2>
+<p>Learning data structures, one problem at a time.</p>
+<div class="repo-meta"><span><i class="language-dot yellow"></i>JavaScript</span><span aria-label="19 stars">☆ 19</span><span>3 forks</span><span>Updated Sep 18</span>
+</div>
+</div><span class="repo-rank">#04</span>
+</article>
+<article class="repo-row" data-language="css" data-search="portfolio a home for projects, experiments, and ideas.">
+<div>
+<h2>Portfolio <span class="visibility">Public</span>
+</h2>
+<p>A home for projects, experiments, and ideas.</p>
+<div class="repo-meta"><span><i class="language-dot purple"></i>CSS</span><span aria-label="6 stars">☆ 6</span><span>1 forks</span><span>Updated Sep 12</span>
+</div>
+</div><span class="repo-rank">#05</span>
+</article>
+<article class="repo-row" data-language="python" data-search="python_test a sandbox for exploring the fundamentals.">
+<div>
+<h2>Python_test <span class="visibility">Public</span>
+</h2>
+<p>A sandbox for exploring the fundamentals.</p>
+<div class="repo-meta"><span><i class="language-dot blue"></i>Python</span><span aria-label="3 stars">☆ 3</span><span>0 forks</span><span>Updated Sep 8</span>
+</div>
+</div><span class="repo-rank">#06</span>
+</article>
+</div>
+<p id="empty-results" class="empty" hidden>No repositories match. Try another search or language.</p>
+<div class="list-footer">Good ideas start with a first commit.</div>
+</section>
+</main>
+<footer><span>codefolio <span class="muted">· Built one commit at a time.</span></span><span>Sample data · A preview of your developer journey</span>
+</footer>
 </body>
 </html>

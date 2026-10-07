@@ -1,54 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Languages</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
-    <link rel="stylesheet" href="styles/lang.css" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Languages · Codefolio</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/lang.css">
+<script src="scripts/app.js" defer>
+</script>
 </head>
-<body>
-<!--for navigation-->
-    <header>
-        <img class="image" src="assets/github-6980894_640.png" alt="GitHub Logo">
-        <div class="nav_points">
-            <nav>
-                <span><a href="index.html">Home</a></span>
-                <span><a href="heatmap.html">Your Heat Map</a></span>
-                <span><a href="repositories.html">Your top repositories</a></span>
-                <span><a href="#">Your top languages</a></span>
-            </nav>
-        </div>
-    </header>
-
-<!--    main contents-->
-    <main>
-        <div class="lang">
-            <h1>Your Top Languages</h1>
-            <div class="lang_card">
-                <div class="title_and_times">
-                    <h3>Langauge: </h3>
-                    <p>How many times that langauge was used</p>
-                </div>
-                <h4>Recent 3 Projects with that language</h4>
-                <ul>
-                    <li>Project 1</li>
-                    <li>Project 2</li>
-                    <li>Project 3</li>
-                </ul>
-            </div>
-            <div class="lang_card">
-                <div class="title_and_times">
-                    <h3>python: </h3>
-                    <p>20 Times</p>
-                </div>
-                <h4>Recent 3 Projects with that language</h4>
-                <ul>
-                    <li>Python_test</li>
-                    <li>Robotics_with_python</li>
-                    <li>Testing_library</li>
-                </ul>
-            </div>
-        </div>
-    </main>
+<body class="dashboard"><a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
+</header>
+<div class="nav-wrap">
+<nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="heatmap.html">Activity</a><a href="repositories.html">Repositories</a><a href="languages.html" aria-current="page">Languages</a>
+</nav>
+</div>
+<main id="main">
+<div class="page-heading">
+<div>
+<p class="eyebrow">YOUR EVER-GROWING TOOLKIT</p>
+<h1>A language for every idea.</h1>
+<p class="muted">Discover your strengths and see where curiosity takes you next.</p>
+</div><span class="sample-label">Sample profile</span>
+</div>
+<div class="stats-grid">
+<div class="panel stat"><span>Languages</span><strong>6</strong><small>Different ways to build</small>
+</div>
+<div class="panel stat"><span>Most used</span><strong>Python</strong><small>42% of sample usage</small>
+</div>
+<div class="panel stat"><span>Repositories</span><strong>48</strong><small>Language appearances</small>
+</div>
+<div class="panel stat"><span>Next chapter</span><strong>Your call</strong><small>Keep exploring</small>
+</div>
+</div>
+<div class="section-title">
+<h2>Language breakdown</h2><span class="muted">By repository count · Sample data</span>
+</div>
+<section class="language-grid" aria-label="Language breakdown">
+<article class="panel language-card">
+<div class="language-card-top"><span class="language-icon blue">Py</span><span class="language-percentage">42%</span>
+</div>
+<h2>Python</h2>
+<p class="muted">Used in <strong>20</strong> sample repositories</p>
+<div class="progress"><span class="blue" style="width:42%"></span>
+</div>
+<h3>Recent projects</h3>
+<p class="project-names">Robotics_with_python · Testing_library · Python_test</p>
+</article>
+<article class="panel language-card">
+<div class="language-card-top"><span class="language-icon yellow">Ja</span><span class="language-percentage">25%</span>
+</div>
+<h2>JavaScript</h2>
+<p class="muted">Used in <strong>12</strong> sample repositories</p>
+<div class="progress"><span class="yellow" style="width:25%"></span>
+</div>
+<h3>Recent projects</h3>
+<p class="project-names">Algorithm_notes · Task_tracker · API_playground</p>
+</article>
+<article class="panel language-card">
+<div class="language-card-top"><span class="language-icon orange">HT</span><span class="language-percentage">17%</span>
+</div>
+<h2>HTML</h2>
+<p class="muted">Used in <strong>8</strong> sample repositories</p>
+<div class="progress"><span class="orange" style="width:17%"></span>
+</div>
+<h3>Recent projects</h3>
+<p class="project-names">Web_design_project · Portfolio · Landing_page</p>
+</article>
+<article class="panel language-card">
+<div class="language-card-top"><span class="language-icon purple">CS</span><span class="language-percentage">10%</span>
+</div>
+<h2>CSS</h2>
+<p class="muted">Used in <strong>5</strong> sample repositories</p>
+<div class="progress"><span class="purple" style="width:10%"></span>
+</div>
+<h3>Recent projects</h3>
+<p class="project-names">Portfolio · Web_design_project · Style_lab</p>
+</article>
+<article class="panel language-card">
+<div class="language-card-top"><span class="language-icon blue">Ty</span><span class="language-percentage">4%</span>
+</div>
+<h2>TypeScript</h2>
+<p class="muted">Used in <strong>2</strong> sample repositories</p>
+<div class="progress"><span class="blue" style="width:4%"></span>
+</div>
+<h3>Recent projects</h3>
+<p class="project-names">Typed_tools · Dashboard_app</p>
+</article>
+<article class="panel language-card">
+<div class="language-card-top"><span class="language-icon green">Sh</span><span class="language-percentage">2%</span>
+</div>
+<h2>Shell</h2>
+<p class="muted">Used in <strong>1</strong> sample repositories</p>
+<div class="progress"><span class="green" style="width:2%"></span>
+</div>
+<h3>Recent projects</h3>
+<p class="project-names">Dev_scripts</p>
+</article>
+</section>
+</main>
+<footer><span>codefolio <span class="muted">· Built one commit at a time.</span></span><span>Sample data · A preview of your developer journey</span>
+</footer>
 </body>
 </html>
