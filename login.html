@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in · Codefolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="scripts/app.js" defer></script>
+</head>
+<body class="login-page">
+    <a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
+</header>
+<div class="nav-wrap">
+<nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="heatmap.html">Activity</a><a href="repositories.html">Repositories</a><a href="languages.html">Languages</a>
+</nav>
+</div>
+
+    <main id="main" class="login-layout">
+        <section class="login-intro">
+            <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+            <h1>Welcome back,<br>builder<span>.</span></h1>
+            <p class="muted">Your projects. Your progress. Your story.<br>A little space for everything you’re building.</p>
+            <div class="login-preview panel">
+                <span class="tile-icon green" aria-hidden="true">⌘</span>
+                <div><h2>Pick up where you left off.</h2><p class="muted">Explore your activity, repositories, and toolkit.</p></div>
+            </div>
+        </section>
+        <section class="login-card panel" aria-labelledby="login-heading">
+            <span class="login-mark" aria-hidden="true">&lt;/&gt;</span>
+            <h2 id="login-heading">Log in to Codefolio</h2>
+            <p class="muted">Make this demo workspace feel like yours.</p>
+            <form id="demo-login" action="index.html" method="get">
+                <label for="login-username">Your username</label>
+                <input id="login-username" type="text" placeholder="e.g. curious-builder" autocomplete="username" required minlength="1" maxlength="39" pattern="[A-Za-z0-9]+(-[A-Za-z0-9]+)*" aria-describedby="username-help login-note">
+                <p id="username-help" class="field-help">Use letters, numbers, and single hyphens between words.</p>
+                <button class="button primary full" type="submit">Log in to demo <span aria-hidden="true">→</span></button>
+                <p id="login-error" class="login-error" role="alert" hidden></p>
+            </form>
+            <div class="login-note" id="login-note"><strong>Just a demo.</strong> No password needed. This doesn’t connect to GitHub or create an account. Your name is kept only for this tab’s session.</div>
+            <a class="guest-link" href="index.html">Continue as a guest →</a>
+            <noscript><p class="field-help">Enable JavaScript to personalize the demo. You can still continue as a guest.</p></noscript>
+        </section>
+    </main>
+    <footer><span>codefolio <span class="muted">· Built one commit at a time.</span></span><span>Demo sign-in · Sample workspace</span></footer>
+</body>
+</html>
