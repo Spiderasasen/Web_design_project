@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Overview · Codefolio</title>
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="styles/home_page.css">
-<!--<script src="scripts/app.js" defer>-->
-<!--</script>-->
+<script src="scripts/accessing_session.js" defer></script>
+    <script>
+        changing_header_logo();
+
+        //changing the big letter
+        document.getElementById("main_logo").textContent = firstLetter();
+        document.getElementById("username").textContent = gettingUserInfo();
+    </script>
 </head>
 <body class="home"><a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio
+        <span class="brand-divider">/</span>
+        <span class="brand-sub">your developer story</span>
+    </a>
+    <span class="demo-badge">Demo workspace</span>
+    <a class="button secondary auth-link" href="login.html">Log in</a>
+    <a class="avatar" id="avatar" href="index.html" aria-label="Go to overview">Y</a>
 </header>
 <div class="nav-wrap">
 <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="heatmap.html">Activity</a><a href="repositories.html">Repositories</a><a href="languages.html">Languages</a>
@@ -18,7 +32,7 @@
 <main id="main">
 <div class="home-layout">
 <aside class="profile">
-<div class="profile-avatar" aria-hidden="true">Y<span>⌘</span>
+<div class="profile-avatar" aria-hidden="true"><span id="main_logo">Y</span><span>⌘</span>
 </div>
 <h1>Your next chapter.</h1>
 <p class="handle" id="username">@your-username</p>

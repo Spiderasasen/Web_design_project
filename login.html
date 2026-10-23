@@ -52,7 +52,7 @@
             <p>Welcome back. Your workspace is waiting.</p>
         </div>
         <section class="panel login-card" aria-label="Login form">
-            <form id="demo-login" action="index.html" method="get">
+            <form id="demo-login" action="index.html" method="get" onsubmit="event.preventDefault();">
                 <div class="field">
                     <label for="login-username">Username</label>
                     <input id="login-username" type="text" autocomplete="username" placeholder="Enter your username" required maxlength="39" pattern="[A-Za-z0-9]+(-[A-Za-z0-9]+)*" aria-describedby="username-help login-note" spellcheck="false" autocapitalize="none">
@@ -68,13 +68,45 @@
                 <button class="button primary full sign-in" type="submit" id="submit-button">Log in</button>
                 <p id="login-error" class="login-error" role="alert" hidden></p>
             </form>
-            <p id="login-note" class="demo-note"><strong>Demo login.</strong> Use any username and a made-up password. The password is never saved or sent anywhere. Only your username is kept for this tab’s session.</p>
+            <p id="login-note" class="demo-note"></p>
             <noscript><p class="demo-note">JavaScript is needed for demo sign-in. You can still continue as a guest below.</p></noscript>
         </section>
         <a class="guest-link" href="index.html">Just looking around? Continue as a guest →</a>
     </main>
     <footer class="login-footer"><span>codefolio <span class="muted">· Your developer story, all in one place.</span></span></footer>
     <script>
+        // login.js saves "username" only after a successful account match.
+        // Watch for that result instead of navigating on every form submission.
+        const loginPageForm = document.querySelector("#demo-login");
+        const loginPageButton = document.querySelector("#submit-button");
+        let loginSuccessWatcher;
+
+        loginPageButton.addEventListener("click", event => {
+            if (!loginPageForm.reportValidity()) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return;
+            }
+
+            window.clearInterval(loginSuccessWatcher);
+            const attemptedUsername = document.querySelector("#login-username").value;
+            try {
+                // An old successful login must not approve a new failed attempt.
+                sessionStorage.removeItem("username");
+                loginSuccessWatcher = window.setInterval(() => {
+                    if (sessionStorage.getItem("username") === attemptedUsername) {
+                        window.clearInterval(loginSuccessWatcher);
+                        window.location.assign("index.html");
+                    }
+                }, 150);
+            } catch {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                document.querySelector("#login-note").textContent =
+                    "Browser session storage is unavailable. Enable it to test login.";
+            }
+        }, { capture: true });
+
         const passwordInput = document.querySelector("#login-password");
         const passwordToggle = document.querySelector("#password-toggle");
         passwordToggle.addEventListener("click", () => {
