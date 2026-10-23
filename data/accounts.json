@@ -1,0 +1,37 @@
+[
+  {
+    "username": "Bob",
+    "password": "bobWasHere",
+    "languages": [
+      {
+        "sql": 50,
+        "python": 20,
+        "go": 15,
+        "C#": 15
+      }
+    ],
+    "repositories":[
+      "learning_C#",
+      "Company_dataset",
+      "backend_with_datasets"
+    ]
+  },
+  {
+    "username": "elonWebDev",
+    "password": "elonStudent",
+    "languages": [
+      {
+        "HTML": 25,
+        "CSS": 25,
+        "JavaScript": 50
+      }
+    ],
+    "repositories": [
+      "studentrestapi",
+      "learning_node",
+      "random_students",
+      "basics_of_js",
+      "intro_to_html"
+    ]
+  }
+]

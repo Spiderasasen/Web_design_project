@@ -5,44 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in · Codefolio</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/login.css">
-    <script src="scripts/app.js" defer></script>
+<!--    <script src="scripts/app.js" defer></script>-->
+    <script src="scripts/login.js" defer></script>
+    <style>
+        body { min-height: 100svh; background-color: #1B1F22; display: flex; flex-direction: column; }
+        .login-header { padding: 26px 6%; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .login-header .brand { font-size: 21px; }
+        .back-link { font-size: 12px; color: var(--muted); }
+        .back-link:hover, .guest-link:hover { color: white; }
+        main.login-main { width: 100%; max-width: 440px; min-height: auto; padding: 32px 20px 60px; margin: auto; }
+        .login-heading { text-align: center; margin-bottom: 26px; }
+        .login-symbol { width: 54px; height: 54px; margin: 0 auto 22px; display: grid; place-items: center; border: 1px solid #45634e; border-radius: 14px; background: #293b30; color: #8fd5a8; font: 700 24px monospace; }
+        .login-heading h1 { font-size: 27px; letter-spacing: -.8px; margin-bottom: 10px; }
+        .login-heading p { font-size: 13px; color: var(--muted); }
+        .login-card { padding: 28px; box-shadow: 0 16px 45px #00000018; }
+        .field { margin-bottom: 20px; }
+        .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+        .field input { display: block; width: 100%; min-width: 0; border: 1px solid #424b53; border-radius: 6px; background: #1B1F22; color: var(--text); padding: 11px 12px; font: inherit; font-size: 14px; }
+        .field input::placeholder { color: #78848e; }
+        .field input:focus { border-color: #6db88a; outline: 2px solid #6db88a33; outline-offset: 1px; }
+        .field-help { margin-top: 7px; font-size: 11px; color: var(--muted); }
+        .password-wrap { position: relative; }
+        .password-wrap input { padding-right: 65px; }
+        .password-toggle { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; color: #b7c5be; cursor: pointer; font-size: 11px; padding: 6px; }
+        .sign-in { cursor: pointer; padding: 11px; color: white; margin-top: 2px; }
+        button:focus-visible { outline: 2px solid #82c69b; outline-offset: 4px; }
+        .login-error { color: #ffb5b5; font-size: 12px; margin-top: 14px; }
+        .demo-note { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 11px; line-height: 1.8; color: var(--muted); }
+        .demo-note strong { color: #d0d9d3; font-weight: 500; }
+        .guest-link { display: block; text-align: center; padding: 16px; margin-top: 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: #b7c5be; }
+        .login-footer { justify-content: center; text-align: center; font-size: 11px; padding: 22px 0; }
+        @media (max-width: 480px) { .login-header { padding: 20px; } .login-header .brand { font-size: 18px; } .login-card { padding: 24px; } main.login-main { padding-top: 22px; } }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } .button:hover { transform: none; } }
+    </style>
 </head>
-<body class="login-page">
+<body>
     <a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html">Log in</a><a class="avatar" href="index.html" aria-label="Go to overview">Y</a>
-</header>
-<div class="nav-wrap">
-<nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="heatmap.html">Activity</a><a href="repositories.html">Repositories</a><a href="languages.html">Languages</a>
-</nav>
-</div>
-
-    <main id="main" class="login-layout">
-        <section class="login-intro">
-            <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
-            <h1>Welcome back,<br>builder<span>.</span></h1>
-            <p class="muted">Your projects. Your progress. Your story.<br>A little space for everything you’re building.</p>
-            <div class="login-preview panel">
-                <span class="tile-icon green" aria-hidden="true">⌘</span>
-                <div><h2>Pick up where you left off.</h2><p class="muted">Explore your activity, repositories, and toolkit.</p></div>
-            </div>
-        </section>
-        <section class="login-card panel" aria-labelledby="login-heading">
-            <span class="login-mark" aria-hidden="true">&lt;/&gt;</span>
-            <h2 id="login-heading">Log in to Codefolio</h2>
-            <p class="muted">Make this demo workspace feel like yours.</p>
+    <header class="login-header">
+        <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio</a>
+        <a class="back-link" href="index.html">← Back to overview</a>
+    </header>
+    <main id="main" class="login-main">
+        <div class="login-heading">
+            <div class="login-symbol" aria-hidden="true">&lt;/&gt;</div>
+            <h1>Log in to Codefolio</h1>
+            <p>Welcome back. Your workspace is waiting.</p>
+        </div>
+        <section class="panel login-card" aria-label="Login form">
             <form id="demo-login" action="index.html" method="get">
-                <label for="login-username">Your username</label>
-                <input id="login-username" type="text" placeholder="e.g. curious-builder" autocomplete="username" required minlength="1" maxlength="39" pattern="[A-Za-z0-9]+(-[A-Za-z0-9]+)*" aria-describedby="username-help login-note">
-                <p id="username-help" class="field-help">Use letters, numbers, and single hyphens between words.</p>
-                <button class="button primary full" type="submit">Log in to demo <span aria-hidden="true">→</span></button>
+                <div class="field">
+                    <label for="login-username">Username</label>
+                    <input id="login-username" type="text" autocomplete="username" placeholder="Enter your username" required maxlength="39" pattern="[A-Za-z0-9]+(-[A-Za-z0-9]+)*" aria-describedby="username-help login-note" spellcheck="false" autocapitalize="none">
+                    <p id="username-help" class="field-help">Letters, numbers, and single hyphens between words.</p>
+                </div>
+                <div class="field">
+                    <label for="login-password">Password</label>
+                    <div class="password-wrap">
+                        <input id="login-password" type="password" autocomplete="off" placeholder="Enter a demo password" required aria-describedby="login-note">
+                        <button id="password-toggle" class="password-toggle" type="button" aria-label="Show password" aria-controls="login-password" aria-pressed="false">Show</button>
+                    </div>
+                </div>
+                <button class="button primary full sign-in" type="submit" id="submit-button">Log in</button>
                 <p id="login-error" class="login-error" role="alert" hidden></p>
             </form>
-            <div class="login-note" id="login-note"><strong>Just a demo.</strong> No password needed. This doesn’t connect to GitHub or create an account. Your name is kept only for this tab’s session.</div>
-            <a class="guest-link" href="index.html">Continue as a guest →</a>
-            <noscript><p class="field-help">Enable JavaScript to personalize the demo. You can still continue as a guest.</p></noscript>
+            <p id="login-note" class="demo-note"><strong>Demo login.</strong> Use any username and a made-up password. The password is never saved or sent anywhere. Only your username is kept for this tab’s session.</p>
+            <noscript><p class="demo-note">JavaScript is needed for demo sign-in. You can still continue as a guest below.</p></noscript>
         </section>
+        <a class="guest-link" href="index.html">Just looking around? Continue as a guest →</a>
     </main>
-    <footer><span>codefolio <span class="muted">· Built one commit at a time.</span></span><span>Demo sign-in · Sample workspace</span></footer>
+    <footer class="login-footer"><span>codefolio <span class="muted">· Your developer story, all in one place.</span></span></footer>
+    <script>
+        const passwordInput = document.querySelector("#login-password");
+        const passwordToggle = document.querySelector("#password-toggle");
+        passwordToggle.addEventListener("click", () => {
+            const show = passwordInput.type === "password";
+            passwordInput.type = show ? "text" : "password";
+            passwordToggle.textContent = show ? "Hide" : "Show";
+            passwordToggle.setAttribute("aria-label", show ? "Hide password" : "Show password");
+            passwordToggle.setAttribute("aria-pressed", String(show));
+        });
+    </script>
 </body>
 </html>
