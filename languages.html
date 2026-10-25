@@ -7,6 +7,22 @@
 <link rel="stylesheet" href="styles/lang.css">
 <script src="scripts/app.js" defer>
 </script>
+    <script src="scripts/accessing_session.js" defer></script>
+    <script src="scripts/length_systems.js" defer></script>
+    <script src="scripts/most_called.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>{
+            changing_header_logo();
+            document.getElementById("repo").textContent = lengthOfLOrR("r");
+            document.getElementById("lang").textContent = lengthOfLOrR("l");
+
+            //getting the most used langauge
+            const most_used_lang = gettingHighestLanguage();
+            console.log(most_used_lang);
+            document.getElementById("Most_used").textContent = most_used_lang;
+
+        });
+    </script>
 </head>
 <body class="dashboard"><a class="skip" href="#main">Skip to content</a>
 <header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html" id="login-button">Log in</a><a class="avatar" id="avatar" href="index.html" aria-label="Go to overview">Y</a>
@@ -24,11 +40,11 @@
 </div><span class="sample-label">Sample profile</span>
 </div>
 <div class="stats-grid">
-<div class="panel stat"><span>Languages</span><strong>6</strong><small>Different ways to build</small>
+<div class="panel stat"><span>Languages</span><strong id="lang"></strong><small>Different ways to build</small>
 </div>
-<div class="panel stat"><span>Most used</span><strong>Python</strong><small>42% of sample usage</small>
+<div class="panel stat"><span>Most used</span><strong id="Most_used"></strong><small>42% of sample usage</small>
 </div>
-<div class="panel stat"><span>Repositories</span><strong>48</strong><small>Language appearances</small>
+<div class="panel stat"><span>Repositories</span><strong id="repo"></strong><small>Language appearances</small>
 </div>
 <div class="panel stat"><span>Next chapter</span><strong>Your call</strong><small>Keep exploring</small>
 </div>

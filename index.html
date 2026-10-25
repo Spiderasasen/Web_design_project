@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="styles/home_page.css">
 <script src="scripts/accessing_session.js" defer></script>
-<script src="scripts/home_page.js"></script>
+<script src="scripts/length_systems.js"></script>
     <script>
         //waiting for the page and session script to finish loading
         document.addEventListener("DOMContentLoaded", () => {
@@ -18,14 +18,10 @@
             document.getElementById("username-readme").textContent = gettingUserInfo();
 
             //changing the langauges
-            const languageList = gettingLangauges()
-            console.log(languageList)
-            document.getElementById("language").textContent = getLength(languageList);
+            document.getElementById("language").textContent = lengthOfLOrR("l");
 
             //changing the repositoires
-            const repoList = gettingRepo();
-            console.log(repoList)
-            document.getElementById("repo").textContent = getLength(repoList);
+            document.getElementById("repo").textContent = lengthOfLOrR("r");
         });
     </script>
 </head>

@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="styles/heatmap.css">
 <script src="scripts/app.js" defer>
 </script>
+    <script src="scripts/accessing_session.js" defer></script>
+<!--    when the dom loads-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            changing_header_logo();
+        });
+    </script>
 </head>
 <body class="dashboard"><a class="skip" href="#main">Skip to content</a>
 <header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> codefolio<span class="brand-divider">/</span><span class="brand-sub">your developer story</span></a><span class="demo-badge">Demo workspace</span><a class="button secondary auth-link" href="login.html" id="login-button">Log in</a><a class="avatar" id="avatar" href="index.html" aria-label="Go to overview">Y</a>
