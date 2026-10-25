@@ -4,13 +4,44 @@ class AurthManager {
     isUserLoggedIn(){
         return !!sessionStorage.getItem("username");
     }
+    userLangauges(){
+        if(this.isUserLoggedIn()){
+            try{
+                //changing the saved text back into the language array
+                const savedLanguages = sessionStorage.getItem("language");
+                const languages = JSON.parse(savedLanguages);
+
+                if(Array.isArray(languages) && languages.length > 0){
+                    //getting the names from the first object, not the percentages
+                    return Object.keys(languages[0]);
+                }
+            }
+            catch(err){
+                console.log("failed to read languages, please log in again: ", err);
+            }
+            return [];
+        }
+        else{
+            return ["TypeScript", "Python", "HTML", "Javascript"];
+        }
+    }
+    userRepository(){
+        if(!!sessionStorage.getItem("repository")){
+            return sessionStorage.getItem("repository");
+        }
+        else{
+            return ["Web_design_project", "Robotics_with_python", "Testing_library", "Algorithm_notes"]
+        }
+    }
 }
 
 const auth = new AurthManager();
 
+//getting the username
 function gettingUserInfo() {
     if(auth.isUserLoggedIn()){
         console.log("logged in");
+        document.getElementById("login-button").textContent = "Log Out";
         return sessionStorage.getItem("username");
     }
     else{
@@ -18,6 +49,16 @@ function gettingUserInfo() {
         return "guest_account";
     }
 }
+
+//getting the langauges
+function gettingLangauges(){
+    const langauge = auth.userLangauges();
+    console.log(langauge);
+    return langauge;
+}
+
+//getting the repositories
+
 
 function firstLetter(){
     //checking if the user logedin
@@ -39,4 +80,19 @@ function changing_header_logo(){
     console.log(logo.textContent);
 
     logo.textContent = firstLetter();
+}
+
+//if the user clicks log out, it just removes the session account
+function logging_out(){
+    const logoutButton = document.getElementById("login-button");
+
+    logoutButton.addEventListener("click", () => {
+        console.log("logging out");
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("language");
+        sessionStorage.removeItem("repository");
+
+
+        logoutButton.textContent = "Login"
+    });
 }

@@ -6,7 +6,7 @@ const submit = document.getElementById("submit-button");
 //reading the json file
 async function reading_file() {
     try{
-        const response = await fetch("../data/accounts.json");
+        const response = await fetch("data/accounts.json");
         if(!response.ok){
             throw new Error(response.statusText);
         }
@@ -30,8 +30,8 @@ submit.addEventListener("click", async() => {
 
     //checking if the username and passowrd are the same
     if(accounts){
-        //set to true for if the account is not found
-        let isAccount = true;
+        //checking if a matching account was found
+        let isAccount = false;
 
         //checking each account
         for(const account of accounts){
@@ -41,7 +41,11 @@ submit.addEventListener("click", async() => {
             if(account.username === username.value && account.password === password.value){
                 console.log("logged in", account);
                 alert(`Welcome back ${account.username}!`);
+                //saving the languages as text so they can be read on another page
+                sessionStorage.setItem("language", JSON.stringify(account.languages));
+                sessionStorage.setItem("repository", account.repositories);
                 sessionStorage.setItem("username", account.username);
+                isAccount = true;
                 break;
             }
             else{
