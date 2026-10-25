@@ -27,7 +27,11 @@ class AurthManager {
     }
     userRepository(){
         if(!!sessionStorage.getItem("repository")){
-            return sessionStorage.getItem("repository");
+            const savedRepositories = sessionStorage.getItem("repository");
+            const repo = JSON.parse(savedRepositories);
+            console.log(repo);
+            return repo;
+
         }
         else{
             return ["Web_design_project", "Robotics_with_python", "Testing_library", "Algorithm_notes"]
@@ -58,7 +62,11 @@ function gettingLangauges(){
 }
 
 //getting the repositories
-
+function gettingRepo(){
+    const repo = auth.userRepository();
+    console.log(repo);
+    return repo;
+}
 
 function firstLetter(){
     //checking if the user logedin

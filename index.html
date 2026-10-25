@@ -23,7 +23,9 @@
             document.getElementById("language").textContent = getLength(languageList);
 
             //changing the repositoires
-
+            const repoList = gettingRepo();
+            console.log(repoList)
+            document.getElementById("repo").textContent = getLength(repoList);
         });
     </script>
 </head>
@@ -73,7 +75,7 @@
 </h3>
 <p>This is your space to connect the dots between the projects you create and the skills you grow.</p>
 <div class="readme-stats">
-<div><strong id="repositories">24</strong><span>repositories</span>
+<div><strong id="repo"></strong><span>repositories</span>
 </div>
 <div><strong id="language"></strong><span>languages</span>
 </div>

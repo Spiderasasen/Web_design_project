@@ -43,7 +43,7 @@ submit.addEventListener("click", async() => {
                 alert(`Welcome back ${account.username}!`);
                 //saving the languages as text so they can be read on another page
                 sessionStorage.setItem("language", JSON.stringify(account.languages));
-                sessionStorage.setItem("repository", account.repositories);
+                sessionStorage.setItem("repository", JSON.stringify(account.repositories));
                 sessionStorage.setItem("username", account.username);
                 isAccount = true;
                 break;
